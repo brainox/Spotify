@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B4FB367C26CDCCBE006392B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB367B26CDCCBE006392B6 /* AppDelegate.swift */; };
-		B4FB367E26CDCCBE006392B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB367D26CDCCBE006392B6 /* SceneDelegate.swift */; };
 		B4FB368026CDCCBE006392B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB367F26CDCCBE006392B6 /* ViewController.swift */; };
-		B4FB368326CDCCBE006392B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4FB368126CDCCBE006392B6 /* Main.storyboard */; };
 		B4FB368526CDCCC2006392B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4FB368426CDCCC2006392B6 /* Assets.xcassets */; };
 		B4FB368826CDCCC2006392B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4FB368626CDCCC2006392B6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		B4FB367826CDCCBE006392B6 /* Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FB367B26CDCCBE006392B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B4FB367D26CDCCBE006392B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B4FB367F26CDCCBE006392B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B4FB368226CDCCBE006392B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4FB368426CDCCC2006392B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4FB368726CDCCC2006392B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4FB368926CDCCC2006392B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,14 +53,20 @@
 			isa = PBXGroup;
 			children = (
 				B4FB367B26CDCCBE006392B6 /* AppDelegate.swift */,
-				B4FB367D26CDCCBE006392B6 /* SceneDelegate.swift */,
 				B4FB367F26CDCCBE006392B6 /* ViewController.swift */,
-				B4FB368126CDCCBE006392B6 /* Main.storyboard */,
+				B4FB368F26CDCDCA006392B6 /* Resources */,
+			);
+			path = Spotify;
+			sourceTree = "<group>";
+		};
+		B4FB368F26CDCDCA006392B6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				B4FB368426CDCCC2006392B6 /* Assets.xcassets */,
 				B4FB368626CDCCC2006392B6 /* LaunchScreen.storyboard */,
 				B4FB368926CDCCC2006392B6 /* Info.plist */,
 			);
-			path = Spotify;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +128,6 @@
 			files = (
 				B4FB368826CDCCC2006392B6 /* LaunchScreen.storyboard in Resources */,
 				B4FB368526CDCCC2006392B6 /* Assets.xcassets in Resources */,
-				B4FB368326CDCCBE006392B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,21 +140,12 @@
 			files = (
 				B4FB368026CDCCBE006392B6 /* ViewController.swift in Sources */,
 				B4FB367C26CDCCBE006392B6 /* AppDelegate.swift in Sources */,
-				B4FB367E26CDCCBE006392B6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B4FB368126CDCCBE006392B6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B4FB368226CDCCBE006392B6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B4FB368626CDCCC2006392B6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +280,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CJ98NSPAD;
-				INFOPLIST_FILE = Spotify/Info.plist;
+				INFOPLIST_FILE = Spotify/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CJ98NSPAD;
-				INFOPLIST_FILE = Spotify/Info.plist;
+				INFOPLIST_FILE = Spotify/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
