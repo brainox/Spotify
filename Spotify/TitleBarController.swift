@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TitleBarController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
