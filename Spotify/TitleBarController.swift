@@ -11,14 +11,31 @@ class TitleBarController: UIViewController {
     
     var musicBarButtonItem: UIBarButtonItem!
     var podCastBarButtonItem: UIBarButtonItem!
+    let container = Container()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
+        setup()
     }
     
     func setupNavBar() {
         navigationItem.leftBarButtonItems = [musicBarButtonItem, podCastBarButtonItem]
+    }
+    
+    func setup() {
+        guard let containerView = container.view else { return }
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.backgroundColor = .systemOrange
+        view.addSubview(containerView)
+        
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 2),
+            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
