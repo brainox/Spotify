@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B496E9F826D18DD200D3B148 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = B496E9F726D18DD200D3B148 /* Container.swift */; };
+		B496E9FA26D1C78000D3B148 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B496E9F926D1C78000D3B148 /* Extensions.swift */; };
 		B4AC9A9726CFEEFB0042C742 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9A9626CFEEFB0042C742 /* MusicViewController.swift */; };
 		B4AC9A9926CFEF700042C742 /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC9A9826CFEF700042C742 /* PodcastViewController.swift */; };
 		B4FB367C26CDCCBE006392B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB367B26CDCCBE006392B6 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		B496E9F726D18DD200D3B148 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		B496E9F926D1C78000D3B148 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B4AC9A9626CFEEFB0042C742 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		B4AC9A9826CFEF700042C742 /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
 		B4FB367826CDCCBE006392B6 /* Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,7 @@
 				B4AC9A9626CFEEFB0042C742 /* MusicViewController.swift */,
 				B4AC9A9826CFEF700042C742 /* PodcastViewController.swift */,
 				B496E9F726D18DD200D3B148 /* Container.swift */,
+				B496E9F926D1C78000D3B148 /* Extensions.swift */,
 				B4FB368F26CDCDCA006392B6 /* Resources */,
 			);
 			path = Spotify;
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4AC9A9726CFEEFB0042C742 /* MusicViewController.swift in Sources */,
+				B496E9FA26D1C78000D3B148 /* Extensions.swift in Sources */,
 				B4FB368026CDCCBE006392B6 /* TitleBarController.swift in Sources */,
 				B496E9F826D18DD200D3B148 /* Container.swift in Sources */,
 				B4FB367C26CDCCBE006392B6 /* AppDelegate.swift in Sources */,
