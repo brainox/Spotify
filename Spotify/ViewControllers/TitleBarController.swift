@@ -27,7 +27,11 @@ class TitleBarController: UIViewController {
     func setupNavBar() {
         navigationItem.leftBarButtonItems = [musicBarButtonItem, podCastBarButtonItem]
         
-        
+        // hide buttom shade pixel
+        let img = UIImage()
+        self.navigationController?.navigationBar.shadowImage = img
+        self.navigationController?.navigationBar.setBackgroundImage(img, for: .default)
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     func setupViews() {
