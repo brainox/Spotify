@@ -94,6 +94,12 @@ class TitleBarController: UIViewController {
         animateTransition(fromVC: viewControllers[1], toVC: viewControllers[0]) { success in
             self.viewControllers[1].remove()
         }
+        
+        // making Bar Button Item to be deem and brighter when toggled
+        UIView.animate(withDuration: 0.5) {
+            self.musicBarButtonItem.customView?.alpha = 1.0
+            self.podCastBarButtonItem.customView?.alpha = 0.5
+        }
     }
     
     @objc func podcastTapped() {
@@ -109,6 +115,12 @@ class TitleBarController: UIViewController {
         // Remove the other one i.e MusicViewController from the ParentViewController i.e Container()
         animateTransition(fromVC: viewControllers[0], toVC: viewControllers[1]) { success in
             self.viewControllers[0].remove()
+        }
+        
+        // making Bar Button Item to be deem and brighter when toggled
+        UIView.animate(withDuration: 0.5) {
+            self.musicBarButtonItem.customView?.alpha = 0.5
+            self.podCastBarButtonItem.customView?.alpha = 1.0
         }
     }
     
