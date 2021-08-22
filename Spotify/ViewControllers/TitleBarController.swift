@@ -21,14 +21,16 @@ class TitleBarController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
-        setup()
+        setupViews()
     }
     
     func setupNavBar() {
         navigationItem.leftBarButtonItems = [musicBarButtonItem, podCastBarButtonItem]
+        
+        
     }
     
-    func setup() {
+    func setupViews() {
         guard let containerView = container.view else { return }
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.backgroundColor = .systemOrange
@@ -40,6 +42,8 @@ class TitleBarController: UIViewController {
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
+        musicTapped()
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -83,7 +87,9 @@ class TitleBarController: UIViewController {
         container.add(viewControllers[0])
         
         // Remove the other one i.e PodcastViewController from the ParentViewController i.e Container()
-        viewControllers[1].remove()
+        animateTransition(fromVC: viewControllers[1], toVC: viewControllers[0]) { success in
+            self.viewControllers[1].remove()
+        }
     }
     
     @objc func podcastTapped() {
@@ -97,7 +103,41 @@ class TitleBarController: UIViewController {
         container.add(viewControllers[1])
         
         // Remove the other one i.e MusicViewController from the ParentViewController i.e Container()
-        viewControllers[0].remove()
+        animateTransition(fromVC: viewControllers[0], toVC: viewControllers[1]) { success in
+            self.viewControllers[0].remove()
+        }
+    }
+    
+    func animateTransition(fromVC: UIViewController, toVC: UIViewController, completion: @escaping ((Bool) -> Void)) {
+        guard
+            let fromView = fromVC.view,
+            let fromIndex = getIndex(forViewController: fromVC),
+            let toView = toVC.view,
+            let toIndex = getIndex(forViewController: toVC)
+        else {
+            return
+        }
+        
+        let frame = fromVC.view.frame
+        var fromFrameEnd = frame
+        var toFrameStart = frame
+        fromFrameEnd.origin.x = toIndex > fromIndex ? frame.origin.x - frame.width : frame.origin.x + frame.width
+        toFrameStart.origin.x = toIndex > fromIndex ? frame.origin.x + frame.width : frame.origin.x - frame.width
+        toView.frame = toFrameStart
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            fromView.frame = fromFrameEnd
+            toView.frame = frame
+        }, completion: { success in
+            completion(success)
+        })
+    }
+    
+    func getIndex(forViewController vc: UIViewController) -> Int? {
+        for (index, thisVC) in viewControllers.enumerated() {
+            if thisVC == vc { return index}
+        }
+        return nil
     }
 }
 
