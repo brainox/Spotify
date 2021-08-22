@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: TitleBarController())
         
         window?.rootViewController = navigationController
+        
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().barTintColor = .spotifyBlack
         return true
     }
 
