@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol MenuBarDelegate: AnyObject {
+    func didSelectItemAt(index: Int)
+}
+
 class MenuBar: UIView {
     
     let playlistsButton: UIButton!
@@ -15,6 +19,8 @@ class MenuBar: UIView {
     let albumsButton: UIButton!
     var buttons: [UIButton]!
     
+    weak var delegate: MenuBarDelegate?
+     
     override init(frame: CGRect) {
         playlistsButton = makeButton(withText: "Playlists")
         artistsButton = makeButton(withText: "Artists")
@@ -54,14 +60,14 @@ class MenuBar: UIView {
 
 extension MenuBar {
     @objc func playListsButtonTapped() {
-        
+        delegate?.didSelectItemAt(index: 0)
     }
     
     @objc func artistsButtonTapped() {
-        
+        delegate?.didSelectItemAt(index: 1)
     }
     
     @objc func albumsButtonTapped() {
-        
+        delegate?.didSelectItemAt(index: 2)
     }
 }
