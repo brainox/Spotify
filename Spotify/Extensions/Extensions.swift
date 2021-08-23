@@ -33,3 +33,14 @@ extension UIColor {
     static let spotifyBlack = UIColor(red: 12/255, green: 12/255, blue: 12/255, alpha: 1.0)
 }
 
+// Function to make NavBarButton
+func makeButton(withText text: String) -> UIButton {
+    let button = UIButton()
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.setTitle(text, for: .normal)
+    button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+    button.titleLabel?.adjustsFontSizeToFitWidth = true
+    
+    return button
+}
+
