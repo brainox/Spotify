@@ -34,6 +34,7 @@ class MenuBar: UIView {
         artistsButton.addTarget(self, action: #selector(artistsButtonTapped), for: .primaryActionTriggered)
         albumsButton.addTarget(self, action: #selector(albumsButtonTapped), for: .primaryActionTriggered)
         
+        setAlpha(for: playlistsButton)
         layout()
     }
     
@@ -69,5 +70,40 @@ extension MenuBar {
     
     @objc func albumsButtonTapped() {
         delegate?.didSelectItemAt(index: 2)
+    }
+}
+
+extension MenuBar {
+    
+    func selectItem(at index: Int) {
+        animateIndicator(to: index)
+    }
+    
+    private func animateIndicator(to index: Int) {
+        var button: UIButton
+        switch index {
+        case 0:
+            button = playlistsButton
+        case 1:
+            button = artistsButton
+        case 2:
+            button = albumsButton
+        default:
+            button = playlistsButton
+        }
+        
+        setAlpha(for: button)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    private func setAlpha(for button: UIButton) {
+        playlistsButton.alpha = 0.5
+        artistsButton.alpha = 0.5
+        albumsButton.alpha = 0.5
+        
+        button.alpha = 1
     }
 }
