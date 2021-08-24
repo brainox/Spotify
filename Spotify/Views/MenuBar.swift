@@ -53,8 +53,7 @@ class MenuBar: UIView {
             artistsButton.topAnchor.constraint(equalTo: topAnchor),
             artistsButton.leadingAnchor.constraint(equalTo: playlistsButton.trailingAnchor, constant: 36),
             albumsButton.topAnchor.constraint(equalTo: topAnchor),
-            albumsButton.leadingAnchor.constraint(equalTo: artistsButton.trailingAnchor, constant: 36)
-            
+            albumsButton.leadingAnchor.constraint(equalTo: artistsButton.trailingAnchor, constant: 36),
         ])
     }
 }
@@ -73,6 +72,7 @@ extension MenuBar {
     }
 }
 
+// Extension for MenuBar
 extension MenuBar {
     
     func selectItem(at index: Int) {
